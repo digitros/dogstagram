@@ -1,3 +1,10 @@
+<script>
+  import Header from '../components/Header.svelte';
+  import Main from '../components/Main.svelte';
+  import Sidebar from '../components/Sidebar.svelte';
+  import TimeLine from '../components/TimeLine.svelte';
+</script>
+
 <style>
   :global(body) {
     margin: 0;
@@ -9,6 +16,8 @@
   }
 </style>
 
-<div class="main">
-  <h1>Hello Dogstagram</h1>
-</div>
+<Header />
+<Main>
+  <TimeLine />
+  <Sidebar />
+</Main>
