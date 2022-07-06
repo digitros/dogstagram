@@ -1,6 +1,8 @@
 <script>
   import Comments from './Comments.svelte'
-  
+  export let post;
+  let { url, breeds } = post;
+  let { name = 'Unknown', temperament = 'Unknown' } = breeds[0] || {};
 </script>
 
 <style>
@@ -120,9 +122,9 @@
   <div class="Card-container">
     <div class="Card-header">
       <div class="Card-user">
-        <img src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+        <img src={url} alt={name}>
         <h2>
-          Doggyloco
+          {name}
           <span>Queretaro, Mexico</span>
         </h2>
       </div>
@@ -132,7 +134,7 @@
     </div>
     <div class="Card-photo">
       <figure>
-        <img src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+        <img src={url} alt={name}>
       </figure>
     </div>
     <div class="Card-icons">
@@ -145,8 +147,8 @@
       </div>
     </div>
     <div class="Card-description">
-      <h3>Doggyloco</h3>
-      <span>Hello * woof woof *</span>
+      <h3>{name}</h3>
+      <span>{temperament}</span>
     </div>
     <Comments />
   </div>
