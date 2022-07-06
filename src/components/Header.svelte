@@ -1,3 +1,7 @@
+<script>
+  import { likeCount } from '../store/store.js';
+</script>
+
 <style>
   .Header {
     background-color: white;
@@ -66,6 +70,7 @@
         <ul>
           <li>
             <i class="fa-solid fa-heart" />
+            {$likeCount ? $likeCount : ''}
           </li>
           <li>
             <i class="fa-solid fa-user-alt" />
